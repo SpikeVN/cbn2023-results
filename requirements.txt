@@ -1,0 +1,4 @@
+requests
+pdfkit
+Jinja2
+pandas

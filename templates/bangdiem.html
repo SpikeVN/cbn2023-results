@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <h3> Bảng điểm thi CBN • Chuyên {{ name }} • 2023 </h3>
+    <p>
+        Xin chào mọi người. Mình là người đã tạo ra sheet bảng điểm thi chuyên Anh toàn tỉnh năm 2022. Năm nay, mình lại làm thêm cho tất cả các khối. Lần này thì thêm cái đoạn đầu này :))). <br>
+        Cái thằng làm ra sheet này cũng đã đỗ chuyên năm ngoái rồi (good ending). Năm nay không để cái watermark Nguyễn Tri Phương to đùng như năm trước nữa, lố quá.<br>
+        Liên hệ với mình: hypixelminiworldvn@gmail.com
+        Cái này không phải là “hack” được của Sở hay leak điểm đâu, là bot tra tự động đấy.
+        <a href="https://gist.github.com/SpikeVN/84fdb2832743c68db1f42f710d9f8ca3">gist link code</a> <br>
+        (Giấy phép AGPL 3, nghĩa là nếu các bạn sửa đổi code của 
+        mình cũng phải công khai code.)
+    </p>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Số báo danh</th>
+                <th>Họ và tên</th>
+                <th>Ngày sinh</th>
+                <th>Trường</th>
+                <th>Văn</th>
+                <th>Anh</th>
+                <th>Toán tổng</th>
+                <th>Môn Chuyên</th>
+                <th>Tổng Chuyên</th>
+                <th>Tổng Đại trà</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i, s in students %}
+            <tr>
+                <td class="data centered">{{ i+1 }}</td>
+                <td class="data centered">{{ s.sbd }}</td>
+                <td>{{ s.name }}</td>
+                <td>{{ s.birthdate }}</td>
+                <td>{{ s.school }}</td>
+                <td class="data">{{ s.van }}</td>
+                <td class="data">{{ s.anh }}</td>
+                <td class="data">{{ s.toan }}</td>
+                <td class="data">{{ s.mchuyen }}</td>
+                <td class="data">{{ s.chuyen }}</td>
+                <td class="data">{{ s.daitra }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        h3 {
+            text-align: center;
+            margin-bottom: 1em;
+        }
+
+        th {
+            background-color: #585b70;
+            color: #cdd6f4;
+        }
+
+        tr:nth-child(even) {
+            background-color: #a6adc8 !important;
+        }
+
+        tr {
+            background-color: #cdd6f4;
+        }
+
+        table, th, td {
+            border-left: 1px solid #181825;
+            border-right: 1px solid #181825;
+            padding: 5px;
+            border-collapse: collapse;
+        }
+        th {
+            border-bottom: 1px solid #181825;
+        }
+
+
+        table {
+            border: 1px solid #181825;
+        }
+
+        .data {
+            font-family: "SF Mono", "JetBrains Mono";
+        }
+
+        .centered {
+            text-align: center;
+        }
+
+        body {
+            background-color: #fff;
+            color: black;
+            font-family: "Source Serif Pro", "Inter", "SF Pro Text";
+        }
+
+        th, h3 {
+            font-family: "Inter";
+        }
+
+        p {
+            margin-left: 2em;
+            margin-right: 2em;
+        }
+    </style>
+
+<body>
+
+</html>
